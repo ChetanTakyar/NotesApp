@@ -5,7 +5,6 @@ import java.util.Properties;
 
 
 public class UI implements optionsInterface {
-    private static String notes = "";
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -15,8 +14,8 @@ public class UI implements optionsInterface {
     }
 
     public void menuActions(){
-        String variableX = "What would you like to do?";
-        System.out.println(variableX);
+        String prompt = "What would you like to do?";
+        System.out.println(prompt);
         menu menuObj = new menu();
         int listOfOptions = menuObj.menuList();
         
@@ -37,17 +36,17 @@ public class UI implements optionsInterface {
 
     @Override
     public void addNotes() {
+        String desktopPath = System.getProperty("user.home") + "/Desktop/";
+
         System.out.println("What would you like to save your notes as?");
         String fileName = input.nextLine();
-
-        int count = fileName.length();
 
         System.out.println("Please enter your notes here:");
         String firstNote = input.nextLine();
 
 
         try {
-            FileOutputStream writtenNote = new FileOutputStream("/Users/chetantakyar/Desktop/ " + fileName);
+            FileOutputStream writtenNote = new FileOutputStream(String.format("%s%s.txt", desktopPath, fileName));
             writtenNote.write(firstNote.getBytes());
             writtenNote.close();
         } catch (IOException e) {
