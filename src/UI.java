@@ -19,11 +19,11 @@ public class UI implements optionsInterface {
         String prompt = "What would you like to do?";
         System.out.println(prompt);
         menu menuObj = new menu();
-        int listOfOptions = menuObj.menuList();
+        int chosenOption = menuObj.menuList();
         
 
 
-        switch (listOfOptions) {
+        switch (chosenOption) {
             case 1:
                 addNotes();
                 break;
