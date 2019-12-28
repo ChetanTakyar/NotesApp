@@ -60,7 +60,7 @@ public class UI implements optionsInterface {
     public void editNotes() {
 
     }
-
+  
     @Override
     public void deleteNotes() {
 
