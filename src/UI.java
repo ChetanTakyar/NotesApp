@@ -1,7 +1,9 @@
+
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.Properties;
+import static java.lang.System.getProperty;
 
 
 public class UI implements optionsInterface {
@@ -36,7 +38,7 @@ public class UI implements optionsInterface {
 
     @Override
     public void addNotes() {
-        String desktopPath = System.getProperty("user.home") + "/Desktop/";
+        String desktopPath = getProperty("user.home") + "/Desktop/";
 
         System.out.println("What would you like to save your notes as?");
         String fileName = input.nextLine();
